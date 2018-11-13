@@ -43,6 +43,14 @@ function notification_rest_api(){
     register_rest_field('notifications', 'when_to_notify', array(
         'get_callback' => function() {return get_post_custom_values('when_to_notify');}
     ));
+
+    register_rest_field('post', 'student_year', array(
+        'get_callback' => function() {return get_post_custom_values('student_year');}
+    ));
+
+    register_rest_field('post', 'content_month', array(
+        'get_callback' => function() {return get_post_custom_values('appMonth');}
+    ));
 }
 
 add_action('init', 'create_notification' );
